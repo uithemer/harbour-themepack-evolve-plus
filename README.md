@@ -1,4 +1,4 @@
-# Xenlism Wildfire for Sailfish OS
+# Evolve Plus for Sailfish OS
 
 Evolve Plus for Sailfish OS.
 
