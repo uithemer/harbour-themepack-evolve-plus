@@ -149,6 +149,10 @@ Page
               AboutTranslator { text: "Francesco Vaccaro" }
               Item { width: parent.width; height: Theme.paddingLarge }
 
+              AboutLanguage { text: "Zhōngwén (Chinese)" }
+              AboutTranslator { text: "rui kon" }
+              Item { width: parent.width; height: Theme.paddingLarge }
+
               Label {
                   x: Theme.paddingLarge
                   width: parent.width - (x * 2)
