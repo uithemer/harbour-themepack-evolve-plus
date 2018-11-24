@@ -145,6 +145,10 @@ Page
 
               SectionHeader { text: qsTr("Translations") }
 
+              AboutLanguage { text: "Deutsch" }
+              AboutTranslator { text: "Sailfishman" }
+              Item { width: parent.width; height: Theme.paddingLarge }
+
               AboutLanguage { text: "Italiano" }
               AboutTranslator { text: "Francesco Vaccaro" }
               Item { width: parent.width; height: Theme.paddingLarge }
