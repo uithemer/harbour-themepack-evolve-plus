@@ -13,8 +13,8 @@ Name:       harbour-themepack-evolve-plus
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Evolve Plus
-Version:    0.2.0
-Release:    6
+Version:    0.2.1
+Release:    1
 Group:      Qt/Qt
 License:    GPLv3
 Packager:   fravaccaro <fravaccaro@jollacommunity.it>
@@ -80,7 +80,10 @@ desktop-file-install --delete-original       \
 chmod +x /usr/share/%{name}/fetchicons.sh
 
 %changelog
-* Fri Nov 23 2018 0.1.1
+* Sun Nov 25 2018 0.2.1
+- Added icons.
+
+* Fri Nov 23 2018 0.2.0
 - Overlay support.
 
 * Thu Nov 22 2018 0.1.1
