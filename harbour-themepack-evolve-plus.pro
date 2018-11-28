@@ -26,7 +26,7 @@ OTHER_FILES += qml/harbour-themepack-evolve-plus.qml \
     qml/cover/CoverPage.qml \
     qml/components/AboutLanguage.qml \
     qml/components/AboutTranslator.qml \
-    rpm/harbour-themepack-evolve-plus.changes.in \
+    rpm/harbour-themepack-evolve-plus.changes \
     rpm/harbour-themepack-evolve-plus.spec \
     harbour-themepack-evolve-plus.desktop \
     qml/pages/FirstPage.qml
