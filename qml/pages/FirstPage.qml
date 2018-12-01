@@ -149,6 +149,10 @@ Page
               AboutTranslator { text: "Sailfishman" }
               Item { width: parent.width; height: Theme.paddingLarge }
 
+              AboutLanguage { text: "Español" }
+              AboutTranslator { text: "Rafael Morales" }
+              Item { width: parent.width; height: Theme.paddingLarge }
+
               AboutLanguage { text: "Italiano" }
               AboutTranslator { text: "Francesco Vaccaro" }
               Item { width: parent.width; height: Theme.paddingLarge }
