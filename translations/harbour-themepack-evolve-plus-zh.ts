@@ -25,11 +25,11 @@
     </message>
     <message>
         <source>This will open your e-mail client, from which you can send me the name of the apps you would like to be included in this theme.</source>
-        <translation>该操作将会打开你的电子邮件客户端，你可以把你想要适配的图标名称寄给我。</translation>
+        <translation>该操作将会打开你的电子邮件客户端，你可以把想要适配的图标名称发送给我。</translation>
     </message>
     <message>
         <source>By requesting new icons, you accept sending the name of the unthemed apps installed on your device, along with your e-mail address. This data will be used by me only for the intended purpose and NEVER disclosed to thirdy parties. Your app names and e-mail address will be deleted right after.</source>
-        <translation>为了请求新的图标，你需要接受将设备中安装的应用的名称连同你的邮箱地址发送给我。数据仅会被用于预期的目的，绝不会泄露给任何第三方。你发送的软件名称和邮箱地址之后将被立刻删除。</translation>
+        <translation>为了请求新的图标，你需要同意将设备中安装的应用的名称连同你的邮箱地址发送给我。数据仅会被用于预期的目的，绝不会泄露给任何第三方。你发送的软件名称和邮箱地址之后将被立刻删除。</translation>
     </message>
     <message>
         <source>If you plan to request icons, please consider to donate! It helps me staying motivated and maintaining the project.</source>
@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>If you like my work and want to buy me a beer, feel free to do it!</source>
-        <translation>如果你喜欢我的作品并且想给我买杯啤酒，我将荣幸之至！</translation>
+        <translation>如果你喜欢我的作品并且想给我买瓶啤酒，我将荣幸之至！</translation>
     </message>
     <message>
         <source>Donate</source>
