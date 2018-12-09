@@ -79,5 +79,13 @@
         <source>Released under the GNU GPLv3 license. Icons by &lt;a href=&apos;https://twitter.com/wanmonstar&apos;&gt;WanMonstar&lt;/a&gt; and &lt;a href=&apos;https://twitter.com/Nfanliver&apos;&gt;Nfanliver&lt;/a&gt;. Icons are released under the &lt;a href=&apos;https://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Common BY-NC-SA 4.0&lt;/a&gt; license.</source>
         <translation>Distribuido bajo la licencia GNU GPLv3. Iconos por &lt;a href=&apos;https://twitter.com/wanmonstar&apos;&gt;WanMonstar&lt;/a&gt; y &lt;a href=&apos;https://twitter.com/Nfanliver&apos;&gt;Nfanliver&lt;/a&gt;. Los Iconos son distribuidos bajo la licencia &lt;a href=&apos;https://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Common BY-NC-SA 4.0&lt;/a&gt;.</translation>
     </message>
+    <message>
+        <source>Credits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard navigation based on the one on &lt;a href=&apos;https://github.com/Wunderfitz/harbour-piepmatz&apos;&gt;Piepmatz&lt;/a&gt; by Sebastian Wolf.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

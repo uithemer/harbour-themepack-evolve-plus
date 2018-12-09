@@ -24,8 +24,7 @@ SOURCES += \
 
 OTHER_FILES += qml/harbour-themepack-evolve-plus.qml \
     qml/cover/CoverPage.qml \
-    qml/components/AboutLanguage.qml \
-    qml/components/AboutTranslator.qml \
+    qml/components/*.qml \
     rpm/harbour-themepack-evolve-plus.changes \
     rpm/harbour-themepack-evolve-plus.spec \
     harbour-themepack-evolve-plus.desktop \

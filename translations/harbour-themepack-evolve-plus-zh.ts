@@ -79,5 +79,13 @@
         <source>Released under the GNU GPLv3 license. Icons by &lt;a href=&apos;https://twitter.com/wanmonstar&apos;&gt;WanMonstar&lt;/a&gt; and &lt;a href=&apos;https://twitter.com/Nfanliver&apos;&gt;Nfanliver&lt;/a&gt;. Icons are released under the &lt;a href=&apos;https://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Common BY-NC-SA 4.0&lt;/a&gt; license.</source>
         <translation>在GNU GPLv3 许可下发布。图标由&lt;a href=&apos;https://twitter.com/wanmonstar&apos;&gt;梦影决幻&lt;/a&gt;和&lt;a href=&apos;https://twitter.com/Nfanliver&apos;&gt;Nfanliver&lt;/a&gt;绘制。图标在&lt;a href=&apos;https://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Common BY-NC-SA 4.0&lt;/a&gt;许可下发布。</translation>
     </message>
+    <message>
+        <source>Credits</source>
+        <translation>信誉</translation>
+    </message>
+    <message>
+        <source>Keyboard navigation based on the one on &lt;a href=&apos;https://github.com/Wunderfitz/harbour-piepmatz&apos;&gt;Piepmatz&lt;/a&gt; by Sebastian Wolf.</source>
+        <translation>机械键盘导航灵感源自Sebastian Wolf开发的&lt;a href=&apos;https://github.com/Wunderfitz/harbour-piepmatz&apos;&gt;Piepmatz&lt;/a&gt;。</translation>
+    </message>
 </context>
 </TS>
