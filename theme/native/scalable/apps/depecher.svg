@@ -1,8 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 192 192" style="enable-background:new 0 0 192 192;" xml:space="preserve">
-<style type="text/css">
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="图层_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 192 192"
+   style="enable-background:new 0 0 192 192;"
+   xml:space="preserve"
+   sodipodi:docname="depecher.svg"
+   inkscape:version="0.92.2 2405546, 2018-03-11"><metadata
+   id="metadata60"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs58" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1366"
+   inkscape:window-height="706"
+   id="namedview56"
+   showgrid="false"
+   inkscape:zoom="1.2291667"
+   inkscape:cx="96"
+   inkscape:cy="96"
+   inkscape:window-x="0"
+   inkscape:window-y="34"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="图层_1-2" />
+<style
+   type="text/css"
+   id="style2">
 	.st0{fill:none;}
 	.st1{opacity:1.000000e-02;enable-background:new    ;}
 	.st2{opacity:2.000000e-02;enable-background:new    ;}
@@ -17,43 +58,140 @@
 	.st11{fill:#FAFAFA;}
 	.st12{fill:#FFFFFF;}
 </style>
-<title>telegram</title>
-<g id="图层_2_1_">
-	<g id="图层_1-2">
-		<rect class="st0" width="192" height="192"/>
-		<path class="st1" d="M96,190c-68.7,0-93-24.3-93-93S27.3,4,96,4s93,24.3,93,93S164.7,190,96,190z"/>
-		<path class="st2" d="M96,189c-67.9,0-92-24.1-92-92S28.1,5,96,5s92,24.1,92,92S163.9,189,96,189z"/>
-		<path class="st3" d="M96,188c-67.2,0-91-23.8-91-91S28.8,6,96,6s91,23.8,91,91S163.2,188,96,188z"/>
-		<path class="st4" d="M186,97c0,66.7-23.3,90-90,90S6,163.7,6,97S29.3,7,96,7S186,30.3,186,97z"/>
-		<path class="st5" d="M186,96c0,66.7-23.3,90-90,90S6,162.7,6,96S29.3,6,96,6S186,29.3,186,96z"/>
+<title
+   id="title4">telegram</title>
+<g
+   id="图层_2_1_">
+	<g
+   id="图层_1-2">
+		<rect
+   class="st0"
+   width="192"
+   height="192"
+   id="rect6"
+   x="0"
+   y="0"
+   style="fill:none" />
 		
-			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="166.0041" y1="472.0022" x2="25.9978" y2="331.9959" gradientTransform="matrix(1 0 0 1 0 -306)">
-			<stop  offset="0" style="stop-color:#000000;stop-opacity:0.1"/>
-			<stop  offset="0.5" style="stop-color:#808080;stop-opacity:5.000000e-02"/>
-			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.12"/>
-		</linearGradient>
-		<path class="st6" d="M186,96c0,66.7-23.3,90-90,90S6,162.7,6,96S29.3,6,96,6S186,29.3,186,96z"/>
 		
-			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="166.0128" y1="424.0122" x2="25.9872" y2="283.9878" gradientTransform="matrix(1 0 0 1 0 -258)">
-			<stop  offset="0" style="stop-color:#000000;stop-opacity:4.000000e-02"/>
-			<stop  offset="0.5" style="stop-color:#808080;stop-opacity:0"/>
-			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.1"/>
-		</linearGradient>
-		<path class="st7" d="M96,6C29.3,6,6,29.3,6,96s23.3,90,90,90s90-23.3,90-90S162.7,6,96,6z M164.6,164.6C151.2,178,130,184,96,184
-			s-55.2-6-68.6-19.4S8,130,8,96s6-55.2,19.4-68.6S62,8,96,8s55.2,6,68.6,19.4S184,62,184,96S178,151.2,164.6,164.6z"/>
 		
-			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="172.2184" y1="34.2192" x2="73.7195" y2="132.7191" gradientTransform="matrix(1 0 0 -1 0 194)">
-			<stop  offset="0" style="stop-color:#000000;stop-opacity:2.000000e-02"/>
-			<stop  offset="1" style="stop-color:#000000;stop-opacity:0.1"/>
+		
+		<path
+   class="st5"
+   d="m 186,96 c 0,66.7 -23.3,90 -90,90 C 29.3,186 6,162.7 6,96 6,29.3 29.3,6 96,6 c 66.7,0 90,23.3 90,90 z"
+   id="path16"
+   inkscape:connector-curvature="0"
+   style="fill:#06517f" />
+		
+			<linearGradient
+   id="SVGID_1_"
+   gradientUnits="userSpaceOnUse"
+   x1="166.0041"
+   y1="472.0022"
+   x2="25.997801"
+   y2="331.99591"
+   gradientTransform="translate(0,-306)">
+			<stop
+   offset="0"
+   style="stop-color:#000000;stop-opacity:0.1"
+   id="stop18" />
+			<stop
+   offset="0.5"
+   style="stop-color:#808080;stop-opacity:5.000000e-02"
+   id="stop20" />
+			<stop
+   offset="1"
+   style="stop-color:#FFFFFF;stop-opacity:0.12"
+   id="stop22" />
 		</linearGradient>
-		<path class="st8" d="M186,96.1l-41.8-41.7L37,98l37,37l1,5l44.8,44.8C168.3,179.2,186,154.1,186,96.1z"/>
-		<path class="st9" d="M77.3,140.8c-3.3,0-2.7-1.2-3.9-4.4l-9.7-32L138.5,60"/>
-		<path class="st10" d="M77.3,140.8c2.6,0,3.7-1.2,5.1-2.6L96,125l-17-10.2"/>
-		<path class="st11" d="M79,114.7l41.1,30.4c4.7,2.6,8.1,1.2,9.2-4.4l16.7-78.8c1.7-6.9-2.6-10-7.1-7.9L40.8,91.9
-			c-6.7,2.7-6.7,6.4-1.2,8.1l25.2,7.9L123.1,71c2.8-1.7,5.3-0.8,3.2,1.1"/>
-		<path class="st12" d="M41.8,93.9L140,56c2.4-1.1,4.8-0.7,6.2,1c-0.9-3.3-4-4.5-7.2-3L40.8,91.9c-5.1,2.1-6.3,4.7-4.2,6.6
-			C36.6,96.9,38.3,95.2,41.8,93.9z"/>
-		<path class="st12" d="M127.3,74.1c1.5-1.3,0.6-2.2-1.1-1.9L79,114.7l1.8,1.3L127.3,74.1z"/>
+		<path
+   class="st6"
+   d="m 186,96 c 0,66.7 -23.3,90 -90,90 C 29.3,186 6,162.7 6,96 6,29.3 29.3,6 96,6 c 66.7,0 90,23.3 90,90 z"
+   id="path25"
+   inkscape:connector-curvature="0"
+   style="fill:url(#SVGID_1_)" />
+		
+			<linearGradient
+   id="SVGID_2_"
+   gradientUnits="userSpaceOnUse"
+   x1="166.0128"
+   y1="424.01221"
+   x2="25.9872"
+   y2="283.98779"
+   gradientTransform="translate(0,-258)">
+			<stop
+   offset="0"
+   style="stop-color:#000000;stop-opacity:4.000000e-02"
+   id="stop27" />
+			<stop
+   offset="0.5"
+   style="stop-color:#808080;stop-opacity:0"
+   id="stop29" />
+			<stop
+   offset="1"
+   style="stop-color:#FFFFFF;stop-opacity:0.1"
+   id="stop31" />
+		</linearGradient>
+		<path
+   class="st7"
+   d="M 96,6 C 29.3,6 6,29.3 6,96 c 0,66.7 23.3,90 90,90 66.7,0 90,-23.3 90,-90 C 186,29.3 162.7,6 96,6 Z m 68.6,158.6 C 151.2,178 130,184 96,184 62,184 40.8,178 27.4,164.6 14,151.2 8,130 8,96 8,62 14,40.8 27.4,27.4 40.8,14 62,8 96,8 130,8 151.2,14 164.6,27.4 178,40.8 184,62 184,96 c 0,34 -6,55.2 -19.4,68.6 z"
+   id="path34"
+   inkscape:connector-curvature="0"
+   style="fill:url(#SVGID_2_)" />
+		
+			<linearGradient
+   id="SVGID_3_"
+   gradientUnits="userSpaceOnUse"
+   x1="172.2184"
+   y1="34.2192"
+   x2="73.719498"
+   y2="132.7191"
+   gradientTransform="matrix(1,0,0,-1,0,194)">
+			<stop
+   offset="0"
+   style="stop-color:#000000;stop-opacity:2.000000e-02"
+   id="stop36" />
+			<stop
+   offset="1"
+   style="stop-color:#000000;stop-opacity:0.1"
+   id="stop38" />
+		</linearGradient>
+		<path
+   class="st8"
+   d="M 186,96.1 144.2,54.4 37,98 l 37,37 1,5 44.8,44.8 C 168.3,179.2 186,154.1 186,96.1 Z"
+   id="path41"
+   inkscape:connector-curvature="0"
+   style="fill:url(#SVGID_3_)" />
+		<path
+   class="st9"
+   d="m 77.3,140.8 c -3.3,0 -2.7,-1.2 -3.9,-4.4 l -9.7,-32 74.8,-44.4"
+   id="path43"
+   inkscape:connector-curvature="0"
+   style="fill:#c8daea" />
+		<path
+   class="st10"
+   d="m 77.3,140.8 c 2.6,0 3.7,-1.2 5.1,-2.6 L 96,125 79,114.8"
+   id="path45"
+   inkscape:connector-curvature="0"
+   style="fill:#a9c9dd" />
+		<path
+   class="st11"
+   d="m 79,114.7 41.1,30.4 c 4.7,2.6 8.1,1.2 9.2,-4.4 L 146,61.9 c 1.7,-6.9 -2.6,-10 -7.1,-7.9 L 40.8,91.9 c -6.7,2.7 -6.7,6.4 -1.2,8.1 l 25.2,7.9 58.3,-36.9 c 2.8,-1.7 5.3,-0.8 3.2,1.1"
+   id="path47"
+   inkscape:connector-curvature="0"
+   style="fill:#fafafa" />
+		<path
+   class="st12"
+   d="M 41.8,93.9 140,56 c 2.4,-1.1 4.8,-0.7 6.2,1 -0.9,-3.3 -4,-4.5 -7.2,-3 L 40.8,91.9 c -5.1,2.1 -6.3,4.7 -4.2,6.6 0,-1.6 1.7,-3.3 5.2,-4.6 z"
+   id="path49"
+   inkscape:connector-curvature="0"
+   style="fill:#ffffff" />
+		<path
+   class="st12"
+   d="m 127.3,74.1 c 1.5,-1.3 0.6,-2.2 -1.1,-1.9 L 79,114.7 80.8,116 Z"
+   id="path51"
+   inkscape:connector-curvature="0"
+   style="fill:#ffffff" />
 	</g>
 </g>
 </svg>
