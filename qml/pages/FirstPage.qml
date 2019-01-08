@@ -81,6 +81,8 @@ Page
                 text: qsTr("Released under the GNU GPLv3 license. Icons by <a href='https://twitter.com/wanmonstar'>WanMonstar</a> and <a href='https://twitter.com/Nfanliver'>Nfanliver</a>. Icons are released under the <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Common BY-NC-SA 4.0</a> license.")
             }
 
+            LabelSpacer { }
+
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Sources")
@@ -105,6 +107,8 @@ Page
                 text: qsTr("If you plan to request icons, please consider to donate! It helps me staying motivated and maintaining the project.")
              }
 
+            LabelSpacer { }
+
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Request icons")
@@ -120,6 +124,8 @@ Page
                   text: qsTr("If you want to create a theme compatible with UI Themer, please read the documentation.")
                }
 
+              LabelSpacer { }
+
               Button {
                   anchors.horizontalCenter: parent.horizontalCenter
                   text: qsTr("Documentation")
@@ -131,6 +137,8 @@ Page
               LabelText {
                   text: qsTr("If you like my work and want to buy me a beer, feel free to do it!")
               }
+
+              LabelSpacer { }
 
               Button {
                   anchors.horizontalCenter: parent.horizontalCenter
@@ -146,34 +154,46 @@ Page
 
               SectionHeader { text: qsTr("Translations") }
 
-              AboutLanguage { text: "Deutsch" }
-              AboutTranslator { text: "Sailfishman" }
-              Item { width: parent.width; height: Theme.paddingLarge }
+              DetailItem {
+                  label: "Deutsch"
+                  value: "Sailfishman"
+              }
 
-              AboutLanguage { text: "Español" }
-              AboutTranslator { text: "Rafael Morales" }
-              Item { width: parent.width; height: Theme.paddingLarge }
+              DetailItem {
+                  label: "Español"
+                  value: "Rafael Morales"
+              }
 
-              AboutLanguage { text: "Italiano" }
-              AboutTranslator { text: "Francesco Vaccaro" }
-              Item { width: parent.width; height: Theme.paddingLarge }
+              DetailItem {
+                  label: "Italiano"
+                  value: "Francesco Vaccaro"
+              }
 
-              AboutLanguage { text: "Slovenščina" }
-              AboutTranslator { text: "Boštjan Štrumbelj" }
-              Item { width: parent.width; height: Theme.paddingLarge }
+              DetailItem {
+                  label: "Slovenščina"
+                  value: "Boštjan Štrumbelj"
+              }
 
-              AboutLanguage { text: "Zhōngwén (Chinese)" }
-              AboutTranslator { text: "rui kon" }
-              Item { width: parent.width; height: Theme.paddingLarge }
+              DetailItem {
+                  label: "Zhōngwén (Chinese)"
+                  value: "rui kon"
+              }
 
               LabelText {
                   text: qsTr("Request a new language or contribute to existing languages on the Transifex project page.")
               }
 
+              LabelSpacer { }
+
               Button {
                   anchors.horizontalCenter: parent.horizontalCenter
                   text: qsTr("Transifex")
                   onClicked: Qt.openUrlExternally("https://www.transifex.com/fravaccaro/evolve-plus")
+              }
+
+              Item {
+                  width: parent.width
+                  height: Theme.paddingLarge
               }
 
         }
