@@ -170,6 +170,16 @@ Page
               }
 
               DetailItem {
+                  label: "Nederlands"
+                  value: "Nathan Follens"
+              }
+
+              DetailItem {
+                  label: "Neerlandais (Belgique)"
+                  value: "Nathan Follens"
+              }
+
+              DetailItem {
                   label: "Slovenščina"
                   value: "Boštjan Štrumbelj"
               }

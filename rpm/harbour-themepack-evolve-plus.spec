@@ -14,7 +14,7 @@ Name:       harbour-themepack-evolve-plus
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Evolve Plus
 Version:    0.2.7
-Release:    3
+Release:    4
 Group:      Qt/Qt
 License:    GPLv3
 Packager:   fravaccaro <fravaccaro@jollacommunity.it>
