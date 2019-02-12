@@ -18,7 +18,7 @@ You can request a new icon via the theme companion app or by [opening an issue](
 
 ## Create custom theme packs
 
-Documentation on how to create theme packs available [here](https://fravaccaro.github.io/themepacksupport-sailfishos/docs/getstarted.html).
+Documentation on how to create theme packs available [here](https://fravaccaro.github.io/themepacksupport-sailfishos/docs/getstarted).
 
 ## Translate
 
