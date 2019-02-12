@@ -1,3 +1,11 @@
+---
+layout: default
+title: Home
+nav_order: 1
+description: "Evolve Plus for Sailfish OS"
+permalink: /
+---
+
 # Evolve Plus for Sailfish OS
 
 Evolve Plus for Sailfish OS.

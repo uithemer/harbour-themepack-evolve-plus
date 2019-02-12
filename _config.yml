@@ -1,1 +1,11 @@
-theme: jekyll-theme-leap-day
+remote_theme: pmarsceill/just-the-docs
+title: Evolve Plus for Sailfish OS
+description: Evolve Plus for Sailfish OS
+baseurl: ""
+exclude: ["appicons/", "other/", "qml/", "rpm/", "scripts/", "src/", "theme/", "translations/", "LICENSE", "*.desktop", "*.pro"]
+
+url: "https://fravaccaro.github.io/sailfishos-uithemer"
+search_enabled: false
+aux_links:
+    "Evolve Plus on GitHub":
+      - "//github.com/fravaccaro/harbour-themepack-evolve-plus"
