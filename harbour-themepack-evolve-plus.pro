@@ -10,10 +10,13 @@ OTHER_SOURCES += $$MY_FILES
 my_resources.path = $$PREFIX/share/$$TARGET
 my_resources.files = $$MY_FILES
 
+appicons.files = appicons/*
+appicons.path = /usr/share/icons/hicolor/
+
 themepack.files = theme/*
 themepack.path = $$PREFIX/share/$$TARGET
 
-INSTALLS += my_resources themepack
+INSTALLS += my_resources appicons themepack
 
 CONFIG += sailfishapp c++11
 
@@ -29,8 +32,6 @@ OTHER_FILES += qml/harbour-themepack-evolve-plus.qml \
     rpm/harbour-themepack-evolve-plus.spec \
     harbour-themepack-evolve-plus.desktop \
     qml/pages/FirstPage.qml
-
-SAILFISHAPP_ICONS = 86x86
 
 CONFIG += sailfishapp_i18n
 

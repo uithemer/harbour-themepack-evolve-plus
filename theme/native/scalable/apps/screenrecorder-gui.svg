@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="192" height="192" viewBox="0 0 192 192">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        opacity: 0.01;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        opacity: 0.02;
+      }
+
+      .cls-4 {
+        opacity: 0.04;
+      }
+
+      .cls-5 {
+        opacity: 0.06;
+      }
+
+      .cls-6 {
+        fill: #ff571d;
+      }
+
+      .cls-7 {
+        fill: url(#未命名的渐变_56);
+      }
+
+      .cls-8 {
+        fill: url(#未命名的渐变_2);
+      }
+
+      .cls-9 {
+        fill: url(#未命名的渐变_17);
+      }
+
+      .cls-10 {
+        fill: #fafafa;
+      }
+
+      .cls-11 {
+        fill: #fff;
+      }
+
+      .cls-12 {
+        fill: url(#未命名的渐变_54);
+      }
+    </style>
+    <linearGradient id="未命名的渐变_56" data-name="未命名的渐变 56" x1="166.004" y1="27.998" x2="25.998" y2="168.004" gradientTransform="matrix(1, 0, 0, -1, 0, 194)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-opacity="0.1"/>
+      <stop offset="0.5" stop-color="gray" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="未命名的渐变_2" data-name="未命名的渐变 2" x1="166.012" y1="75.988" x2="25.987" y2="216.012" gradientTransform="matrix(1, 0, 0, -1, 0, 242)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-opacity="0.04"/>
+      <stop offset="0.5" stop-color="gray" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="未命名的渐变_17" data-name="未命名的渐变 17" x1="167.263" y1="164.736" x2="87.764" y2="85.236" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-opacity="0.02"/>
+      <stop offset="1" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="未命名的渐变_54" data-name="未命名的渐变 54" x1="124" y1="96" x2="156" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#de3400" stop-opacity="0.24"/>
+      <stop offset="0.25" stop-color="#d45700" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ff5a1f" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <title>miui_screenrecorder</title>
+  <g id="图层_2" data-name="图层 2">
+    <g id="图层_1-2" data-name="图层 1">
+      <rect class="cls-1" width="192" height="192"/>
+      <g>
+        <path class="cls-2" d="M96,190C27.3,190,3,165.7,3,97S27.3,4,96,4s93,24.3,93,93S164.7,190,96,190Z"/>
+        <path class="cls-3" d="M96,189C28.1,189,4,164.9,4,97S28.1,5,96,5s92,24.1,92,92S163.9,189,96,189Z"/>
+        <path class="cls-4" d="M96,188C28.8,188,5,164.2,5,97S28.8,6,96,6s91,23.8,91,91S163.2,188,96,188Z"/>
+        <path class="cls-5" d="M186,97c0,66.7-23.3,90-90,90S6,163.7,6,97,29.3,7,96,7,186,30.3,186,97Z"/>
+      </g>
+      <path class="cls-6" d="M186,96c0,66.7-23.3,90-90,90S6,162.7,6,96,29.3,6,96,6,186,29.3,186,96Z"/>
+      <path class="cls-7" d="M186,96c0,66.67-23.32,90-90,90S6,162.67,6,96,29.32,6,96,6,186,29.32,186,96Z"/>
+      <path class="cls-8" d="M96,6C29.3,6,6,29.3,6,96s23.3,90,90,90,90-23.3,90-90S162.7,6,96,6Zm68.6,158.6C151.2,178,130,184,96,184s-55.2-6-68.6-19.4S8,130,8,96s6-55.2,19.4-68.6S62,8,96,8s55.2,6,68.6,19.4S184,62,184,96,178,151.2,164.6,164.6Z"/>
+      <path class="cls-9" d="M101.279,185.945c62.542-1.233,84.656-25,84.719-89.669L154.357,64.635,145.705,86.3,122.358,62.948,44.167,128.833Z"/>
+      <g>
+        <path class="cls-10" d="M149.767,64.2,124,82.685V67c0-3.314-3.686-7-7-7H49c-3.314,0-7,3.686-7,7v58c0,3.314,3.686,7,7,7h68c3.314,0,7-3.686,7-7V109.315L149.767,127.8c2.353,1.438,6.233-.454,6.233-3.438V67.636C156,64.652,152.12,62.76,149.767,64.2Z"/>
+        <g>
+          <path class="cls-11" d="M43,127V69c0-3.314,3.686-7,7-7h68a7.647,7.647,0,0,1,5.743,3.455C122.862,62.637,119.8,60,117,60H49c-3.314,0-7,3.686-7,7v58a6.353,6.353,0,0,0,1.257,3.545A5.225,5.225,0,0,1,43,127Z"/>
+          <path class="cls-11" d="M125,84.685,150.767,66.2a4.374,4.374,0,0,1,5.195.964,4.361,4.361,0,0,0-6.195-2.964L125,81.881Z"/>
+        </g>
+        <path class="cls-12" d="M149.767,64.2,124,82.685v26.63L149.767,127.8c2.353,1.438,6.233-.454,6.233-3.438V67.636C156,64.652,152.12,62.76,149.767,64.2Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
