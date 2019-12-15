@@ -180,6 +180,11 @@ Page
               }
 
               DetailItem {
+                  label: "русский (Russian)"
+                  value: "Oleh Ampilohov"
+              }
+
+              DetailItem {
                   label: "Slovenščina"
                   value: "Boštjan Štrumbelj"
               }
