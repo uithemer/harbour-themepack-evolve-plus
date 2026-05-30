@@ -22,8 +22,6 @@ Documentation on how to create theme packs available [here](https://uithemer.git
 
 ## Translate
 
-Languages supported on [Transifex](https://explore.transifex.com/fravaccaro/evolve-plus/).
-
 Request a new language or contribute to existing languages on the [Transifex project page](https://explore.transifex.com/fravaccaro/evolve-plus/).
 
 ## Builds
