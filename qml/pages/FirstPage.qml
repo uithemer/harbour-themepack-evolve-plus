@@ -143,7 +143,7 @@ Page
               Button {
                   anchors.horizontalCenter: parent.horizontalCenter
                   text: qsTr("Donate")
-                  onClicked: Qt.openUrlExternally("https://www.paypal.me/fravaccaro")
+                  onClicked: Qt.openUrlExternally("https://liberapay.com/fravaccaro")
               }
 
               SectionHeader { text: qsTr("Credits") }

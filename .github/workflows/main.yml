@@ -1,0 +1,57 @@
+name: CI
+
+env:
+  RELEASE: 5.0.0.43
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare
+        run: mkdir -p RPMS
+
+      - name: Build aarch64
+        uses: coderus/github-sfos-build@sfos5
+        with:
+          release: ${{ env.RELEASE }}
+          arch: aarch64
+
+      - name: Build armv7hl
+        uses: coderus/github-sfos-build@sfos5
+        with:
+          release: ${{ env.RELEASE }}
+          arch: armv7hl
+
+      - name: Build i486
+        uses: coderus/github-sfos-build@sfos5
+        with:
+          release: ${{ env.RELEASE }}
+          arch: i486
+
+      - name: Upload build results
+        uses: actions/upload-artifact@v4
+        with:
+          name: RPM-build-results_SFOS${{ env.RELEASE }}+
+          path: RPMS/
+
+      - name: Upload RPMs to GitHub Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: RPMS/*.rpm
