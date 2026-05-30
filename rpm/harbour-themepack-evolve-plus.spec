@@ -13,11 +13,11 @@ Name:       harbour-themepack-evolve-plus
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Evolve Plus
-Version:    0.2.9
+Version:    0.2.10
 Release:    1
 Group:      Qt/Qt
 License:    GPLv3
-Packager:   fravaccaro <fravaccaro@jollacommunity.it>
+Packager:   fravaccaro <me@fravaccaro.com>
 URL:        https://github.com/uithemer/harbour-themepack-evolve-plus
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-themepack-evolve-plus.yaml
@@ -40,8 +40,8 @@ Evolve Plus theme pack for Sailfish OS.
 
 %preun
 if [ "$1" = "0" ]; then
-    rm -rf /home/nemo/.local/share/%{name}
-    rm -rf /home/nemo/.themepack/%{name}
+    rm -rf /home/defaultuser/.local/share/%{name}
+    rm -rf /home/defaultuser/.themepack/%{name}
 fi
 
 %build
@@ -78,29 +78,28 @@ desktop-file-install --delete-original       \
 # << files
 
 %post
-chmod +x /usr/share/%{name}/fetchicons.sh
-mkdir -p /home/nemo/.themepack/%{name}
+mkdir -p /home/defaultuser/.themepack/%{name}
 if [ -d "/usr/share/%{name}/jolla" ]; then
-        mv /usr/share/%{name}/jolla /home/nemo/.themepack/%{name}/
-        ln -s /home/nemo/.themepack/%{name}/jolla /usr/share/%{name}/
+        mv /usr/share/%{name}/jolla /home/defaultuser/.themepack/%{name}/
+        ln -s /home/defaultuser/.themepack/%{name}/jolla /usr/share/%{name}/
 fi
 if [ -d "/usr/share/%{name}/native" ]; then
-        mv /usr/share/%{name}/native /home/nemo/.themepack/%{name}/
-        ln -s /home/nemo/.themepack/%{name}/native /usr/share/%{name}/
+        mv /usr/share/%{name}/native /home/defaultuser/.themepack/%{name}/
+        ln -s /home/defaultuser/.themepack/%{name}/native /usr/share/%{name}/
 fi
 if [ -d "/usr/share/%{name}/apk" ]; then
-        mv /usr/share/%{name}/apk /home/nemo/.themepack/%{name}/
-        ln -s /home/nemo/.themepack/%{name}/apk /usr/share/%{name}/
+        mv /usr/share/%{name}/apk /home/defaultuser/.themepack/%{name}/
+        ln -s /home/defaultuser/.themepack/%{name}/apk /usr/share/%{name}/
 fi
 if [ -d "/usr/share/%{name}/overlay" ]; then
-        mv /usr/share/%{name}/overlay /home/nemo/.themepack/%{name}/
-        ln -s /home/nemo/.themepack/%{name}/overlay /usr/share/%{name}/
+        mv /usr/share/%{name}/overlay /home/defaultuser/.themepack/%{name}/
+        ln -s /home/defaultuser/.themepack/%{name}/overlay /usr/share/%{name}/
 fi
 if [ -d "/usr/share/%{name}/dyncal" ]; then
-        mv /usr/share/%{name}/dyncal /home/nemo/.themepack/%{name}
-        ln -s /home/nemo/.themepack/%{name}/dyncal /usr/share/%{name}/dyncal
+        mv /usr/share/%{name}/dyncal /home/defaultuser/.themepack/%{name}
+        ln -s /home/defaultuser/.themepack/%{name}/dyncal /usr/share/%{name}/dyncal
 fi
 if [ -d "/usr/share/%{name}/dynclock" ]; then
-        mv /usr/share/%{name}/dynclock /home/nemo/.themepack/%{name}
-        ln -s /home/nemo/.themepack/%{name}/dynclock /usr/share/%{name}/
+        mv /usr/share/%{name}/dynclock /home/defaultuser/.themepack/%{name}
+        ln -s /home/defaultuser/.themepack/%{name}/dynclock /usr/share/%{name}/
 fi

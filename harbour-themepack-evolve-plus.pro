@@ -1,7 +1,6 @@
 TARGET = harbour-themepack-evolve-plus
 
 MY_FILES = \
-other/fetchicons.sh \
 other/coverbg.png \
 other/appinfo.png
 
@@ -14,14 +13,15 @@ appicons.files = appicons/*
 appicons.path = /usr/share/icons/hicolor/
 
 themepack.files = theme/*
+themepack.files -= theme/themepack-helper.sh
 themepack.path = $$PREFIX/share/$$TARGET
 
 INSTALLS += my_resources appicons themepack
 
+QT += concurrent
 CONFIG += sailfishapp c++11
 
 SOURCES += \
-    src/spawner.cpp \
     src/themepack.cpp \
     src/main.cpp
 
@@ -31,12 +31,12 @@ OTHER_FILES += qml/harbour-themepack-evolve-plus.qml \
     rpm/harbour-themepack-evolve-plus.changes \
     rpm/harbour-themepack-evolve-plus.spec \
     harbour-themepack-evolve-plus.desktop \
-    qml/pages/FirstPage.qml
+    qml/pages/FirstPage.qml \
+    theme/themepack-helper.sh
 
 CONFIG += sailfishapp_i18n
 
 TRANSLATIONS +=  translations/*.ts
 
 HEADERS += \
-    src/spawner.h \
     src/themepack.h

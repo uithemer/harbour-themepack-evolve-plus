@@ -4,3 +4,8 @@ X-Nemo-Application-Type=silica-qt5
 Icon=harbour-themepack-evolve-plus
 Exec=invoker --type=generic -s /usr/bin/harbour-themepack-evolve-plus
 Name=Evolve Plus
+
+[X-Sailjail]
+OrganizationName=org.themepack.evolve-plus
+ApplicationName=harbour-themepack-evolve-plus
+Sandboxing=Disabled
