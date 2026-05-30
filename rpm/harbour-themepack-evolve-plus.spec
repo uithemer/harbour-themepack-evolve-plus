@@ -14,14 +14,14 @@ Name:       harbour-themepack-evolve-plus
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Evolve Plus
 Version:    0.2.10
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    GPLv3
 Packager:   fravaccaro <me@fravaccaro.com>
 URL:        https://github.com/uithemer/harbour-themepack-evolve-plus
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-themepack-evolve-plus.yaml
-Requires:   sailfishsilica-qt5 >= 0.10.9, sailfish-version >= 2.1.0, harbour-themepacksupport >= 0.8.8-1
+Requires:   sailfishsilica-qt5 >= 0.10.9, sailfish-version >= 2.1.0, harbour-muoto >= 3.0.0
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
