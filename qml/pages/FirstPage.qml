@@ -6,36 +6,10 @@ import "../components"
 Page
 {
     id: firstpage
-    focus: true
+    property var settings
+    property bool donationAcknowledged: false
+
     ThemePack { id: themePack }
-
-
-    Keys.onPressed: {
-        handleKeyPressed(event);
-    }
-
-    function handleKeyPressed(event) {
-
-        if (event.key === Qt.Key_Down) {
-            flickable.flick(0, - firstpage.height);
-            event.accepted = true;
-        }
-
-        if (event.key === Qt.Key_Up) {
-            flickable.flick(0, firstpage.height);
-            event.accepted = true;
-        }
-
-        if (event.key === Qt.Key_PageDown) {
-            flickable.scrollToBottom();
-            event.accepted = true;
-        }
-
-        if (event.key === Qt.Key_PageUp) {
-            flickable.scrollToTop();
-            event.accepted = true;
-        }
-    }
 
     BusyState { id: busyindicator; }
 
@@ -64,21 +38,21 @@ Page
             width: parent.width
             spacing: Theme.paddingMedium
 
-           PageHeader { title: qsTr("Evolve Plus") }
+            PageHeader { title: settings.appName }
 
             Item {
                 height: appicon.height + Theme.paddingMedium
                 width: parent.width
 
-                Image { id: appicon; anchors.horizontalCenter: parent.horizontalCenter; source: "../../appinfo.png" }
+                Image { id: appicon; anchors.horizontalCenter: parent.horizontalCenter; source: settings.appIcon }
             }
 
             LabelText {
-                text: qsTr("Thank you for installing Evolve Plus!")
+                text: qsTr("Thank you for installing %1!").arg(settings.appName)
             }
 
             LabelText {
-                text: qsTr("Released under the GNU GPLv3 license. Icons by <a href='https://twitter.com/wanmonstar'>WanMonstar</a> and <a href='https://twitter.com/Nfanliver'>Nfanliver</a>. Icons are released under the <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Common BY-NC-SA 4.0</a> license.")
+                text: settings.iconAttributionHtml
             }
 
             LabelSpacer { }
@@ -86,7 +60,7 @@ Page
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Sources")
-                onClicked: Qt.openUrlExternally("https://uithemer.github.io/harbour-themepack-evolve-plus/")
+                onClicked: Qt.openUrlExternally(settings.sourcesUrl)
             }
 
             SectionHeader { text: qsTr("Icon request") }
@@ -96,120 +70,97 @@ Page
             }
 
             LabelText {
-                text: qsTr("This will open your e-mail client, from which you can send me the name of the apps you would like to be included in this theme.")
-             }
+                text: qsTr("This will open your e-mail client, from which you can send the maintainer the name of the apps you would like to be included in this theme.")
+            }
 
             LabelText {
-                text: qsTr("By requesting new icons, you accept sending the name of the unthemed apps installed on your device, along with your e-mail address. This data will be used by me only for the intended purpose and NEVER disclosed to thirdy parties. Your app names and e-mail address will be deleted right after.")
-             }
+                text: qsTr("By requesting new icons, you accept sending the name of the unthemed apps installed on your device, along with your e-mail address. This data will be used only for the intended purpose and NEVER disclosed to third parties. Your app names and e-mail address will be deleted right after.")
+            }
 
             LabelText {
-                text: qsTr("If you plan to request icons, please consider to donate! It helps me staying motivated and maintaining the project.")
-             }
+                text: qsTr("If you plan to request icons, please consider donating! It helps support development and maintenance of the project.")
+            }
+
+            LabelSpacer { }
+
+            Button {
+                id: donate
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Donate")
+                onClicked: {
+                    Qt.openUrlExternally(settings.donateUrl)
+                    donationAcknowledged = true
+                    skipDonateSwitch.enabled = false
+                }
+            }
+
+            IconTextSwitch {
+                id: skipDonateSwitch
+                automaticCheck: true
+                text: qsTr("I don't care donating")
+                onClicked: {
+                    if (checked) {
+                        donate.enabled = false
+                        donationAcknowledged = true
+                    } else {
+                        donate.enabled = true
+                        donationAcknowledged = false
+                    }
+                }
+            }
 
             LabelSpacer { }
 
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
+                enabled: donationAcknowledged && !busyindicator.running
                 text: qsTr("Request icons")
                 onClicked: {
-                        busyindicator.running = true;
-                        themePack.fetchIcons();
+                    busyindicator.running = true
+                    themePack.fetchIcons(settings.packInstallPath, settings.iconRequestEmail, settings.iconRequestSubject)
                 }
             }
 
             SectionHeader { text: qsTr("Developers") }
 
-              LabelText {
-                  text: qsTr("If you want to create a theme compatible with UI Themer, please read the documentation.")
-               }
+            LabelText {
+                text: qsTr("If you want to create a theme compatible with UI Themer, please read the documentation.")
+            }
 
-              LabelSpacer { }
+            LabelSpacer { }
 
-              Button {
-                  anchors.horizontalCenter: parent.horizontalCenter
-                  text: qsTr("Documentation")
-                  onClicked: Qt.openUrlExternally("https://uithemer.github.io/themepacksupport-sailfishos/docs/getstarted.html")
-              }
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Documentation")
+                onClicked: Qt.openUrlExternally(settings.docsUrl)
+            }
 
-              SectionHeader { text: qsTr("Support") }
+            SectionHeader { text: qsTr("Translations") }
 
-              LabelText {
-                  text: qsTr("If you like my work and want to buy me a beer, feel free to do it!")
-              }
+            Repeater {
+                model: settings.translators
+                DetailItem {
+                    label: modelData.language
+                    value: modelData.name
+                }
+            }
 
-              LabelSpacer { }
+            LabelText {
+                text: qsTr("Request a new language or contribute to existing languages on the Transifex project page.")
+            }
 
-              Button {
-                  anchors.horizontalCenter: parent.horizontalCenter
-                  text: qsTr("Donate")
-                  onClicked: Qt.openUrlExternally("https://liberapay.com/fravaccaro")
-              }
+            LabelSpacer { }
 
-              SectionHeader { text: qsTr("Credits") }
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Transifex")
+                onClicked: Qt.openUrlExternally(settings.transifexUrl)
+            }
 
-              LabelText {
-                  text: qsTr("Keyboard navigation based on the one on <a href='https://github.com/Wunderfitz/harbour-piepmatz'>Piepmatz</a> by Sebastian Wolf.")
-               }
-
-              SectionHeader { text: qsTr("Translations") }
-
-              DetailItem {
-                  label: "Deutsch"
-                  value: "Sailfishman"
-              }
-
-              DetailItem {
-                  label: "Español"
-                  value: "Rafael Morales"
-              }
-
-              DetailItem {
-                  label: "Italiano"
-                  value: "Francesco Vaccaro"
-              }
-
-              DetailItem {
-                  label: "Nederlands"
-                  value: "Nathan Follens"
-              }
-
-              DetailItem {
-                  label: "Neerlandais (Belgique)"
-                  value: "Nathan Follens"
-              }
-
-              DetailItem {
-                  label: "русский (Russian)"
-                  value: "Oleh Ampilohov"
-              }
-
-              DetailItem {
-                  label: "Slovenščina"
-                  value: "Boštjan Štrumbelj"
-              }
-
-              DetailItem {
-                  label: "Zhōngwén (Chinese)"
-                  value: "rui kon"
-              }
-
-              LabelText {
-                  text: qsTr("Request a new language or contribute to existing languages on the Transifex project page.")
-              }
-
-              LabelSpacer { }
-
-              Button {
-                  anchors.horizontalCenter: parent.horizontalCenter
-                  text: qsTr("Transifex")
-                  onClicked: Qt.openUrlExternally("https://www.transifex.com/fravaccaro/evolve-plus")
-              }
-
-              Item {
-                  width: parent.width
-                  height: Theme.paddingLarge
-              }
+            Item {
+                width: parent.width
+                height: Theme.paddingLarge
+            }
 
         }
 

@@ -26,6 +26,8 @@ SOURCES += \
     src/main.cpp
 
 OTHER_FILES += qml/harbour-themepack-evolve-plus.qml \
+    qml/Settings.qml \
+    README-companion.md \
     qml/cover/CoverPage.qml \
     qml/components/*.qml \
     rpm/harbour-themepack-evolve-plus.changes \

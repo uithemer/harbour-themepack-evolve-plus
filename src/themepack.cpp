@@ -8,9 +8,8 @@
 
 namespace {
 
-const char kPackPath[] = "/usr/share/harbour-themepack-evolve-plus";
+// Sailfish device path for Android launcher icons; not maintainer-specific.
 const char kApkInstalledDir[] = "/home/defaultuser/.local/share/apkd-bridge/launcherIcon";
-const char kRecipient[] = "fravaccaro90@gmail.com";
 
 QStringList missingFilenames(const QString &installedDir, const QString &themedDir)
 {
@@ -28,9 +27,8 @@ QStringList missingFilenames(const QString &installedDir, const QString &themedD
     return missing;
 }
 
-QString buildIconRequestBody()
+QString buildIconRequestBody(const QString &packPath)
 {
-    const QString packPath = QLatin1String(kPackPath);
     const QStringList native = missingFilenames(
         QLatin1String("/usr/share/icons/hicolor/86x86/apps"),
         packPath + QLatin1String("/native/86x86/apps"));
@@ -48,11 +46,10 @@ QString buildIconRequestBody()
         .arg(apk.join(QLatin1String("\n")));
 }
 
-void openIconRequestEmail(const QString &body)
+void openIconRequestEmail(const QString &recipient, const QString &subject, const QString &body)
 {
-    const QString subject = QString::fromLatin1("Icon request for Evolve Plus");
     const QString mailto = QString::fromLatin1("mailto:%1?subject=%2&body=%3")
-        .arg(QLatin1String(kRecipient))
+        .arg(recipient)
         .arg(QString::fromLatin1(QUrl::toPercentEncoding(subject).constData()))
         .arg(QString::fromLatin1(QUrl::toPercentEncoding(body).constData()));
 
@@ -65,14 +62,19 @@ ThemePack::ThemePack(QObject *parent) : QObject(parent), m_iconRequestWatcher(0)
 {
 }
 
-void ThemePack::fetchIcons()
+void ThemePack::fetchIcons(const QString &packPath,
+                           const QString &recipient,
+                           const QString &subject)
 {
     if (m_iconRequestWatcher)
         return;
 
+    m_pendingRecipient = recipient;
+    m_pendingSubject = subject;
+
     m_iconRequestWatcher = new QFutureWatcher<QString>(this);
     connect(m_iconRequestWatcher, SIGNAL(finished()), this, SLOT(onIconRequestFinished()));
-    m_iconRequestWatcher->setFuture(QtConcurrent::run(buildIconRequestBody));
+    m_iconRequestWatcher->setFuture(QtConcurrent::run(buildIconRequestBody, packPath));
 }
 
 void ThemePack::onIconRequestFinished()
@@ -82,7 +84,7 @@ void ThemePack::onIconRequestFinished()
     if (!watcher)
         return;
 
-    openIconRequestEmail(watcher->result());
+    openIconRequestEmail(m_pendingRecipient, m_pendingSubject, watcher->result());
     watcher->deleteLater();
     emit iconsFetched();
 }

@@ -19,77 +19,90 @@
 #
 
 # Usage
-# Place some icons in scalable folders and launche this script from the root folder of the themepack.
+# Place some icons in scalable folders and launch this script from the theme folder.
+
+export_svg() {
+    local input="$1"
+    local width="$2"
+    local height="$3"
+    local output="$4"
+
+    if inkscape --version 2>/dev/null | grep -q '^Inkscape 0\.'; then
+        inkscape -f "$input" -w "$width" -h "$height" -e "$output"
+    else
+        inkscape "$input" -w "$width" -h "$height" -o "$output"
+    fi
+}
 
 # Resize Jolla stock icons
-if [ "$(ls ./jolla/scalable/icons)" ]; then
+if [ "$(ls ./jolla/scalable/icons 2>/dev/null)" ]; then
 
-    ls ./jolla/scalable/icons/*.svg | while read file
+    ls ./jolla/scalable/icons/*.svg | while read -r file
         do
             filename=$(basename "$file")
-            destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./jolla/z1.0/icons/$destFile
-            inkscape -f $file -w 108 -h 108 -e ./jolla/z1.25/icons/$destFile
-            inkscape -f $file -w 129 -h 129 -e ./jolla/z1.5/icons/$destFile
-            inkscape -f $file -w 129 -h 129 -e ./jolla/z1.5-large/icons/$destFile
-            inkscape -f $file -w 151 -h 151 -e ./jolla/z1.75/icons/$destFile
-            inkscape -f $file -w 172 -h 172 -e ./jolla/z2.0/icons/$destFile
+            destFile="${filename%.svg}.png"
+            export_svg "$file" 86 86 "./jolla/z1.0/icons/$destFile"
+            export_svg "$file" 108 108 "./jolla/z1.25/icons/$destFile"
+            export_svg "$file" 129 129 "./jolla/z1.5/icons/$destFile"
+            export_svg "$file" 129 129 "./jolla/z1.5-large/icons/$destFile"
+            export_svg "$file" 151 151 "./jolla/z1.75/icons/$destFile"
+            export_svg "$file" 172 172 "./jolla/z2.0/icons/$destFile"
         done
 fi
 
 # Resize native apps icons
-if [ "$(ls ./native/scalable/apps)" ]; then
-    ls ./native/scalable/apps/*.svg | while read file
+if [ "$(ls ./native/scalable/apps 2>/dev/null)" ]; then
+    ls ./native/scalable/apps/*.svg | while read -r file
         do
             filename=$(basename "$file")
-            destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./native/86x86/apps/$destFile
-            inkscape -f $file -w 108 -h 108 -e ./native/108x108/apps/$destFile
-            inkscape -f $file -w 128 -h 128 -e ./native/128x128/apps/$destFile
-            inkscape -f $file -w 256 -h 256 -e ./native/256x256/apps/$destFile
+            destFile="${filename%.svg}.png"
+            export_svg "$file" 86 86 "./native/86x86/apps/$destFile"
+            export_svg "$file" 108 108 "./native/108x108/apps/$destFile"
+            export_svg "$file" 128 128 "./native/128x128/apps/$destFile"
+            export_svg "$file" 256 256 "./native/256x256/apps/$destFile"
         done
 fi
 
 # Resize Android icons
-if [ "$(ls ./apk/scalable)" ]; then
-    ls ./apk/scalable/*.svg | while read file
+if [ "$(ls ./apk/scalable 2>/dev/null)" ]; then
+    ls ./apk/scalable/*.svg | while read -r file
         do
             filename=$(basename "$file")
-            destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./apk/86x86/$destFile
-            inkscape -f $file -w 128 -h 128 -e ./apk/128x128/$destFile
+            destFile="${filename%.svg}.png"
+            export_svg "$file" 86 86 "./apk/86x86/$destFile"
+            export_svg "$file" 128 128 "./apk/128x128/$destFile"
         done
 fi
 
 # Resize DynCal icons
-if [ "$(ls ./dyncal/scalable/)" ]; then
-    ls ./dyncal/scalable/*.svg | while read file
+if [ "$(ls ./dyncal/scalable/ 2>/dev/null)" ]; then
+    ls ./dyncal/scalable/*.svg | while read -r file
         do
             filename=$(basename "$file")
-            destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./dyncal/86x86/$destFile
-            inkscape -f $file -w 256 -h 256 -e ./dyncal/256x256/$destFile
+            destFile="${filename%.svg}.png"
+            export_svg "$file" 86 86 "./dyncal/86x86/$destFile"
+            export_svg "$file" 256 256 "./dyncal/256x256/$destFile"
         done
 fi
 
 # Resize DynClock icons
-if [ "$(ls ./dynclock/scalable/)" ]; then
-    ls ./dynclock/scalable/*.svg | while read file
+if [ "$(ls ./dynclock/scalable/ 2>/dev/null)" ]; then
+    ls ./dynclock/scalable/*.svg | while read -r file
         do
             filename=$(basename "$file")
-            destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./dynclock/86x86/$destFile
-            inkscape -f $file -w 256 -h 256 -e ./dynclock/256x256/$destFile
+            destFile="${filename%.svg}.png"
+            export_svg "$file" 86 86 "./dynclock/86x86/$destFile"
+            export_svg "$file" 256 256 "./dynclock/256x256/$destFile"
         done
 fi
 
 # Resize overlays
-if [ "$(ls ./overlay/)" ]; then
-    ls ./overlay/*.svg | while read file
+if [ "$(ls ./overlay/ 2>/dev/null)" ]; then
+    ls ./overlay/*.svg | while read -r file
         do
             filename=$(basename "$file")
-            destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 512 -h 512 -e ./overlay/$destFile
+            destFile="${filename%.svg}.png"
+            export_svg "$file" 512 512 "./overlay/$destFile"
         done
 fi
 exit 0

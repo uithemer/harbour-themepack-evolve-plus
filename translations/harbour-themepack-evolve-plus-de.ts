@@ -4,12 +4,8 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Evolve Plus</source>
-        <translation>Evolve Plus</translation>
-    </message>
-    <message>
-        <source>Thank you for installing Evolve Plus!</source>
-        <translation>Schön, dass du Evolve Plus verwendest!</translation>
+        <source>Thank you for installing %1!</source>
+        <translation>Schön, dass du %1 verwendest!</translation>
     </message>
     <message>
         <source>Sources</source>
@@ -17,27 +13,35 @@
     </message>
     <message>
         <source>Icon request</source>
-        <translation>Fehlendes Icon</translation>
+        <translation>Icon-Anfrage</translation>
     </message>
     <message>
         <source>From here you can request missing icons for your favorite apps.</source>
-        <translation>Wenn ein Icon für eine App fehlt, melde es einfach hier unten. </translation>
+        <translation>Hier kannst du fehlende Icons für deine Lieblings-Apps anfordern.</translation>
     </message>
     <message>
-        <source>This will open your e-mail client, from which you can send me the name of the apps you would like to be included in this theme.</source>
-        <translation>Dein E-Mail Client wird sich öffnen, schreibe mir, für welche App ein Icon im Theme fehlt. </translation>
+        <source>This will open your e-mail client, from which you can send the maintainer the name of the apps you would like to be included in this theme.</source>
+        <translation>Dies öffnet deinen E-Mail-Client, über den du dem Maintainer die Namen der Apps senden kannst, die in diesem Theme enthalten sein sollen.</translation>
     </message>
     <message>
-        <source>By requesting new icons, you accept sending the name of the unthemed apps installed on your device, along with your e-mail address. This data will be used by me only for the intended purpose and NEVER disclosed to thirdy parties. Your app names and e-mail address will be deleted right after.</source>
-        <translation>Wenn du ein Icon anforderst, erhalte ich die App-Namen und deine E-Mail Adresse. Diese Daten benötige ich, um deine Wünsche zu berücksichtigen. Diese Infos werden nicht an Dritte weitergegeben und schließlich werden sie gelöscht. </translation>
+        <source>By requesting new icons, you accept sending the name of the unthemed apps installed on your device, along with your e-mail address. This data will be used only for the intended purpose and NEVER disclosed to third parties. Your app names and e-mail address will be deleted right after.</source>
+        <translation>Mit der Anfrage neuer Icons stimmst du zu, die Namen der nicht gethemeten Apps auf deinem Gerät zusammen mit deiner E-Mail-Adresse zu senden. Diese Daten werden nur für den vorgesehenen Zweck verwendet und NIEMALS an Dritte weitergegeben. App-Namen und E-Mail-Adresse werden unmittelbar danach gelöscht.</translation>
     </message>
     <message>
-        <source>If you plan to request icons, please consider to donate! It helps me staying motivated and maintaining the project.</source>
-        <translation>Denk bitte daran, bei Icon-Wünschen oder auch nur als kleines Dankeschön mir einen kleinen Betrag zu spenden. Nur so kann ich weiterhin voll motiviert hinter diesem Projekt stehen. </translation>
+        <source>If you plan to request icons, please consider donating! It helps support development and maintenance of the project.</source>
+        <translation>Wenn du Icons anfragen möchtest, erwäge bitte eine Spende! Sie unterstützt die Entwicklung und Wartung des Projekts.</translation>
+    </message>
+    <message>
+        <source>Donate</source>
+        <translation>Spenden</translation>
+    </message>
+    <message>
+        <source>I don&apos;t care donating</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Request icons</source>
-        <translation>Icon anfordern</translation>
+        <translation>Icons anfordern</translation>
     </message>
     <message>
         <source>Developers</source>
@@ -45,47 +49,23 @@
     </message>
     <message>
         <source>If you want to create a theme compatible with UI Themer, please read the documentation.</source>
-        <translation>Wenn du ein UI Themer kompitables Theme erstellen möchtest, lies dir vorher die Dokumentation durch. </translation>
+        <translation>Wenn du ein mit UI Themer kompatibles Theme erstellen möchtest, lies bitte die Dokumentation.</translation>
     </message>
     <message>
         <source>Documentation</source>
         <translation>Dokumentation</translation>
     </message>
     <message>
-        <source>Support</source>
-        <translation>Support</translation>
-    </message>
-    <message>
-        <source>If you like my work and want to buy me a beer, feel free to do it!</source>
-        <translation>Wenn dir meine Arbeit gefällt, spendier mir doch ein Bier!</translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation>Spenden</translation>
-    </message>
-    <message>
         <source>Translations</source>
-        <translation>Übersetzung</translation>
+        <translation>Übersetzungen</translation>
     </message>
     <message>
         <source>Request a new language or contribute to existing languages on the Transifex project page.</source>
-        <translation>Auf der Transifex Projektseite kannst du bei der Übersetzung mithelfen und weitere Sprachen anfordern.</translation>
+        <translation>Auf der Transifex-Projektseite kannst du bei der Übersetzung mithelfen und weitere Sprachen anfordern.</translation>
     </message>
     <message>
         <source>Transifex</source>
         <translation>Transifex</translation>
-    </message>
-    <message>
-        <source>Released under the GNU GPLv3 license. Icons by &lt;a href=&apos;https://twitter.com/wanmonstar&apos;&gt;WanMonstar&lt;/a&gt; and &lt;a href=&apos;https://twitter.com/Nfanliver&apos;&gt;Nfanliver&lt;/a&gt;. Icons are released under the &lt;a href=&apos;https://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Common BY-NC-SA 4.0&lt;/a&gt; license.</source>
-        <translation>Unter der GNU GPLv3 Lizenz veröffentlicht. Icons von &lt;a href=&apos;https://twitter.com/wanmonstar&apos;&gt;WanMonstar&lt;/a&gt; und &lt;a href=&apos;https://twitter.com/Nfanliver&apos;&gt;Nfanliver&lt;/a&gt;. Icons unter der &lt;a href=&apos;https://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Common BY-NC-SA 4.0&lt;/a&gt; Lizenz veröffentlicht.</translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Keyboard navigation based on the one on &lt;a href=&apos;https://github.com/Wunderfitz/harbour-piepmatz&apos;&gt;Piepmatz&lt;/a&gt; by Sebastian Wolf.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

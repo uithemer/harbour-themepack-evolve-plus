@@ -18,15 +18,13 @@ You can request a new icon via the theme companion app or by [opening an issue](
 
 ## Create custom theme packs
 
-Documentation on how to create theme packs available [here](https://uithemer.github.io/themepacksupport-sailfishos/docs/getstarted).
+Documentation on how to create theme packs available [here](https://uithemer.github.io/harbour-muoto/).
 
 ## Translate
 
-Languages supported:
+Languages supported on [Transifex](https://explore.transifex.com/fravaccaro/evolve-plus/).
 
-[![Languages supported](https://www.transifex.com/_/charts/redirects/fravaccaro/evolve-plus/image_png/harbour-themepack-evolve-plusts)](https://www.transifex.com/fravaccaro/evolve-plus/dashboard/)
-
-Request a new language or contribute to existing languages on the [Transifex project page](https://www.transifex.com/fravaccaro/evolve-plus/dashboard/).
+Request a new language or contribute to existing languages on the [Transifex project page](https://explore.transifex.com/fravaccaro/evolve-plus/).
 
 ## Builds
 
