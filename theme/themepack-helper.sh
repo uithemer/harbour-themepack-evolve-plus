@@ -21,88 +21,130 @@
 # Usage
 # Place some icons in scalable folders and launch this script from the theme folder.
 
-export_svg() {
+shopt -s nullglob
+
+cd "$(dirname "$0")" || exit 1
+
+INKSCAPE_LEGACY=0
+if inkscape --version 2>/dev/null | grep -q '^Inkscape 0\.'; then
+    INKSCAPE_LEGACY=1
+fi
+echo "Using Inkscape $(inkscape --version 2>/dev/null | head -1)" >&2
+
+export_svg_legacy() {
     local input="$1"
     local width="$2"
     local height="$3"
     local output="$4"
 
-    if inkscape --version 2>/dev/null | grep -q '^Inkscape 0\.'; then
-        inkscape -f "$input" -w "$width" -h "$height" -e "$output"
-    else
-        inkscape "$input" -w "$width" -h "$height" -o "$output"
+    mkdir -p "$(dirname "$output")"
+    echo "Exporting $input → $output" >&2
+    inkscape -f "$input" -w "$width" -h "$height" -e "$output"
+}
+
+# Usage: export_svg_sizes INPUT W H OUTPUT [W H OUTPUT ...]
+export_svg_sizes() {
+    local input="$1"
+    shift
+
+    if [ "$INKSCAPE_LEGACY" -eq 1 ]; then
+        while [ $# -ge 3 ]; do
+            export_svg_legacy "$input" "$1" "$2" "$3"
+            shift 3
+        done
+        return
     fi
+
+    local actions="export-type:png"
+    while [ $# -ge 3 ]; do
+        local w=$1
+        local h=$2
+        local out=$3
+        local out_abs
+        mkdir -p "$(dirname "$out")"
+        out_abs="$(realpath -m "$out")"
+        echo "Exporting $input → $out" >&2
+        actions="${actions};export-filename:${out_abs};export-width:${w};export-height:${h};export-do"
+        shift 3
+    done
+    inkscape "$input" --actions="$actions"
 }
 
 # Resize Jolla stock icons
-if [ "$(ls ./jolla/scalable/icons 2>/dev/null)" ]; then
-
-    ls ./jolla/scalable/icons/*.svg | while read -r file
-        do
-            filename=$(basename "$file")
-            destFile="${filename%.svg}.png"
-            export_svg "$file" 86 86 "./jolla/z1.0/icons/$destFile"
-            export_svg "$file" 108 108 "./jolla/z1.25/icons/$destFile"
-            export_svg "$file" 129 129 "./jolla/z1.5/icons/$destFile"
-            export_svg "$file" 129 129 "./jolla/z1.5-large/icons/$destFile"
-            export_svg "$file" 151 151 "./jolla/z1.75/icons/$destFile"
-            export_svg "$file" 172 172 "./jolla/z2.0/icons/$destFile"
-        done
+if [ -d ./jolla/scalable/icons ] && [ "$(ls -A ./jolla/scalable/icons 2>/dev/null)" ]; then
+    echo "==> Jolla icons" >&2
+    for file in ./jolla/scalable/icons/*.svg; do
+        filename=$(basename "$file")
+        destFile="${filename%.svg}.png"
+        export_svg_sizes "$file" \
+            86  86  "./jolla/z1.0/icons/$destFile" \
+            108 108 "./jolla/z1.25/icons/$destFile" \
+            129 129 "./jolla/z1.5/icons/$destFile" \
+            129 129 "./jolla/z1.5-large/icons/$destFile" \
+            151 151 "./jolla/z1.75/icons/$destFile" \
+            172 172 "./jolla/z2.0/icons/$destFile"
+    done
 fi
 
 # Resize native apps icons
-if [ "$(ls ./native/scalable/apps 2>/dev/null)" ]; then
-    ls ./native/scalable/apps/*.svg | while read -r file
-        do
-            filename=$(basename "$file")
-            destFile="${filename%.svg}.png"
-            export_svg "$file" 86 86 "./native/86x86/apps/$destFile"
-            export_svg "$file" 108 108 "./native/108x108/apps/$destFile"
-            export_svg "$file" 128 128 "./native/128x128/apps/$destFile"
-            export_svg "$file" 256 256 "./native/256x256/apps/$destFile"
-        done
+if [ -d ./native/scalable/apps ] && [ "$(ls -A ./native/scalable/apps 2>/dev/null)" ]; then
+    echo "==> Native app icons" >&2
+    for file in ./native/scalable/apps/*.svg; do
+        filename=$(basename "$file")
+        destFile="${filename%.svg}.png"
+        export_svg_sizes "$file" \
+            86  86  "./native/86x86/apps/$destFile" \
+            108 108 "./native/108x108/apps/$destFile" \
+            128 128 "./native/128x128/apps/$destFile" \
+            256 256 "./native/256x256/apps/$destFile"
+    done
 fi
 
 # Resize Android icons
-if [ "$(ls ./apk/scalable 2>/dev/null)" ]; then
-    ls ./apk/scalable/*.svg | while read -r file
-        do
-            filename=$(basename "$file")
-            destFile="${filename%.svg}.png"
-            export_svg "$file" 86 86 "./apk/86x86/$destFile"
-            export_svg "$file" 128 128 "./apk/128x128/$destFile"
-        done
+if [ -d ./apk/scalable ] && [ "$(ls -A ./apk/scalable 2>/dev/null)" ]; then
+    echo "==> Android icons" >&2
+    for file in ./apk/scalable/*.svg; do
+        filename=$(basename "$file")
+        destFile="${filename%.svg}.png"
+        export_svg_sizes "$file" \
+            86  86  "./apk/86x86/$destFile" \
+            128 128 "./apk/128x128/$destFile"
+    done
 fi
 
 # Resize DynCal icons
-if [ "$(ls ./dyncal/scalable/ 2>/dev/null)" ]; then
-    ls ./dyncal/scalable/*.svg | while read -r file
-        do
-            filename=$(basename "$file")
-            destFile="${filename%.svg}.png"
-            export_svg "$file" 86 86 "./dyncal/86x86/$destFile"
-            export_svg "$file" 256 256 "./dyncal/256x256/$destFile"
-        done
+if [ -d ./dyncal/scalable ] && [ "$(ls -A ./dyncal/scalable 2>/dev/null)" ]; then
+    echo "==> DynCal icons" >&2
+    for file in ./dyncal/scalable/*.svg; do
+        filename=$(basename "$file")
+        destFile="${filename%.svg}.png"
+        export_svg_sizes "$file" \
+            86  86  "./dyncal/86x86/$destFile" \
+            256 256 "./dyncal/256x256/$destFile"
+    done
 fi
 
 # Resize DynClock icons
-if [ "$(ls ./dynclock/scalable/ 2>/dev/null)" ]; then
-    ls ./dynclock/scalable/*.svg | while read -r file
-        do
-            filename=$(basename "$file")
-            destFile="${filename%.svg}.png"
-            export_svg "$file" 86 86 "./dynclock/86x86/$destFile"
-            export_svg "$file" 256 256 "./dynclock/256x256/$destFile"
-        done
+if [ -d ./dynclock/scalable ] && [ "$(ls -A ./dynclock/scalable 2>/dev/null)" ]; then
+    echo "==> DynClock icons" >&2
+    for file in ./dynclock/scalable/*.svg; do
+        filename=$(basename "$file")
+        destFile="${filename%.svg}.png"
+        export_svg_sizes "$file" \
+            86  86  "./dynclock/86x86/$destFile" \
+            256 256 "./dynclock/256x256/$destFile"
+    done
 fi
 
 # Resize overlays
-if [ "$(ls ./overlay/ 2>/dev/null)" ]; then
-    ls ./overlay/*.svg | while read -r file
-        do
-            filename=$(basename "$file")
-            destFile="${filename%.svg}.png"
-            export_svg "$file" 512 512 "./overlay/$destFile"
-        done
+if [ -d ./overlay ] && [ "$(ls -A ./overlay/*.svg 2>/dev/null)" ]; then
+    echo "==> Overlays" >&2
+    for file in ./overlay/*.svg; do
+        filename=$(basename "$file")
+        destFile="${filename%.svg}.png"
+        export_svg_sizes "$file" \
+            512 512 "./overlay/$destFile"
+    done
 fi
+
 exit 0
