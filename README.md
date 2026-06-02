@@ -28,7 +28,7 @@ Request a new language or contribute to existing languages on the [Transifex pro
 
 ## Builds
 
-Builds available [here](https://openrepos.net/content/fravaccaro/evolve-plus-icons).
+Builds available [here](https://openrepos.net/content/fravaccaro/evolve-plus-theme-pack).
 
 ## Credits
 
