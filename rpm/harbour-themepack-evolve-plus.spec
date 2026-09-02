@@ -14,10 +14,10 @@ Name:       harbour-themepack-evolve-plus
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Evolve Plus
 Version:    0.2.10
-Release:    5
+Release:    6
 Group:      Qt/Qt
 License:    GPLv3
-Packager:   fravaccaro <me@fravaccaro.com>
+Packager:   fravaccaro
 URL:        https://github.com/uithemer/harbour-themepack-evolve-plus
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-themepack-evolve-plus.yaml
@@ -40,9 +40,27 @@ Evolve Plus theme pack for Sailfish OS.
 
 %preun
 if [ "$1" = "0" ]; then
-    rm -rf /home/defaultuser/.local/share/%{name}
-    rm -rf /home/defaultuser/.themepack/%{name}
+        rm -rf /home/defaultuser/.local/share/%{name}
+
+        # Undo the relocation done by %post. RPM recorded these paths as real
+        # directories, so it must find real directories here to remove them;
+        # left as symlinks it would fail on every packaged file underneath.
+        themepackdir=/home/defaultuser/.themepack/%{name}
+        for dir in jolla native apk overlay dyncal dynclock; do
+                shared=/usr/share/%{name}/$dir
+                stored=$themepackdir/$dir
+
+                if [ -L "$shared" ]; then
+                        rm -f "$shared"
+                        if [ -d "$stored" ]; then
+                                mv "$stored" "$shared"
+                        fi
+                fi
+        done
+
+        rm -rf "$themepackdir"
 fi
+:
 
 %build
 # >> build pre
@@ -78,28 +96,28 @@ desktop-file-install --delete-original       \
 # << files
 
 %post
-mkdir -p /home/defaultuser/.themepack/%{name}
-if [ -d "/usr/share/%{name}/jolla" ]; then
-        mv /usr/share/%{name}/jolla /home/defaultuser/.themepack/%{name}/
-        ln -s /home/defaultuser/.themepack/%{name}/jolla /usr/share/%{name}/
-fi
-if [ -d "/usr/share/%{name}/native" ]; then
-        mv /usr/share/%{name}/native /home/defaultuser/.themepack/%{name}/
-        ln -s /home/defaultuser/.themepack/%{name}/native /usr/share/%{name}/
-fi
-if [ -d "/usr/share/%{name}/apk" ]; then
-        mv /usr/share/%{name}/apk /home/defaultuser/.themepack/%{name}/
-        ln -s /home/defaultuser/.themepack/%{name}/apk /usr/share/%{name}/
-fi
-if [ -d "/usr/share/%{name}/overlay" ]; then
-        mv /usr/share/%{name}/overlay /home/defaultuser/.themepack/%{name}/
-        ln -s /home/defaultuser/.themepack/%{name}/overlay /usr/share/%{name}/
-fi
-if [ -d "/usr/share/%{name}/dyncal" ]; then
-        mv /usr/share/%{name}/dyncal /home/defaultuser/.themepack/%{name}
-        ln -s /home/defaultuser/.themepack/%{name}/dyncal /usr/share/%{name}/dyncal
-fi
-if [ -d "/usr/share/%{name}/dynclock" ]; then
-        mv /usr/share/%{name}/dynclock /home/defaultuser/.themepack/%{name}
-        ln -s /home/defaultuser/.themepack/%{name}/dynclock /usr/share/%{name}/
-fi
+themepackdir=/home/defaultuser/.themepack/%{name}
+mkdir -p "$themepackdir"
+for dir in jolla native apk overlay dyncal dynclock; do
+        shared=/usr/share/%{name}/$dir
+        stored=$themepackdir/$dir
+
+        if [ -L "$shared" ]; then
+                # Already relocated by an earlier install; RPM has just written
+                # the new payload straight through the symlink.
+                if [ "$(readlink "$shared")" = "$stored" ] && [ -d "$stored" ]; then
+                        continue
+                fi
+                rm -f "$shared"
+        fi
+
+        if [ -d "$shared" ]; then
+                rm -rf "$stored"
+                mv "$shared" "$stored"
+        fi
+
+        if [ -d "$stored" ]; then
+                ln -sfn "$stored" "$shared"
+        fi
+done
+:

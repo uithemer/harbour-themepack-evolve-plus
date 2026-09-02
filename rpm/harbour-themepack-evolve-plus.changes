@@ -1,3 +1,13 @@
+* Wed Sep 02 2026 fravaccaro - 0.2.10-6
+- Normalise gradient coordinate systems so cairo-based renderers no longer
+  clip gradient-filled shapes, and re-export the affected icons.
+- Make %post idempotent: skip directories already relocated to ~/.themepack
+  and repair stale symlinks, instead of failing on every upgrade.
+- Undo that relocation in %preun so uninstalling no longer floods the terminal
+  with "remove failed" warnings and leaves nothing behind.
+- CI verifies the committed PNGs against their SVG sources instead of silently
+  re-exporting them at build time.
+
 * Sat May 30 2026 0.2.10
 - Added icons.
 - Bumped compatibility with Muoto

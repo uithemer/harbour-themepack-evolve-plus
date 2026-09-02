@@ -23,11 +23,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Export theme PNGs
+      - name: Install icon verification tooling
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq inkscape
-          cd theme && ./themepack-helper.sh
+          sudo apt-get install -y -qq inkscape python3-pil python3-numpy
+
+      # Gradients drawn with coordinates far outside the document rely on the
+      # renderer's fixed point range; cairo clips them and the icon loses whole
+      # faces. Catch that in the source rather than in a release.
+      - name: Check gradients are normalised
+        run: python3 tools/normalize-gradients.py --check $(find theme -name '*.svg')
+
+      # The PNGs are committed and are what ships, so CI must not silently
+      # re-export them: it verifies they still match the SVGs instead.
+      - name: Verify committed PNGs match their SVG sources
+        run: |
+          cp -a theme "${RUNNER_TEMP}/theme-check"
+          (cd "${RUNNER_TEMP}/theme-check" && ./themepack-helper.sh)
+          python3 tools/compare-icons.py theme "${RUNNER_TEMP}/theme-check"
 
       - name: Prepare
         run: mkdir -p RPMS
